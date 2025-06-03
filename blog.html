@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Stay updated with the latest insights in software development, app development, SEO, and technology trends. Read ROSH Software's expert blog for industry knowledge and tips.">
+    <meta name="keywords" content="software development blog, app development insights, SEO tips, technology trends, web development, mobile apps, digital marketing">
+    <meta name="author" content="ROSH Software">
+    <meta property="og:title" content="ROSH Software Blog - Latest Tech Insights & Development Tips">
+    <meta property="og:description" content="Discover expert insights on software development, app creation, SEO strategies, and technology trends from ROSH Software professionals.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://roshsoftware.netlify.app/blog">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Blog - ROSH Software | Latest Tech Insights & Development Tips</title>
+    <link rel="canonical" href="https://roshsoftware.netlify.app/blog">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0a1128 0%, #0a1128 50%, #064760 100%);
+            min-height: 100vh;
+            color: white;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: white;
+        }
+
+        .page-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .page-title h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #fff, #0daac1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .page-title p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .blog-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        /* Featured Image Styles */
+        .blog-image {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .blog-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .blog-card:hover .blog-image img {
+            transform: scale(1.05);
+        }
+
+        .blog-content {
+            padding: 2rem;
+        }
+
+        /* For cards without images, maintain original padding */
+        .blog-card:not(:has(.blog-image)) {
+            padding: 2rem;
+        }
+
+        .blog-card:not(:has(.blog-image)) .blog-content {
+            padding: 0;
+        }
+
+        .blog-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .blog-category {
+            background: rgba(13, 170, 193, 0.3);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.7rem;
+        }
+
+        .blog-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .blog-excerpt {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .read-more {
+            color: #0daac1;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .read-more:hover {
+            color: white;
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            margin-top: 3rem;
+        }
+
+        .cta-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: linear-gradient(45deg, #0daac1, #064760);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(13, 170, 193, 0.3);
+        }
+
+        /* Loading indicator */
+        .loading {
+            text-align: center;
+            padding: 2rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        @media (max-width: 768px) {
+            .page-title h1 {
+                font-size: 2rem;
+            }
+            
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo-section">
+                <svg class="logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <polygon points="50,0 100,50 50,100 0,50" fill="white"/>
+                </svg>
+                <div class="logo-text">ROSH SOFTWARE</div>
+            </div>
+            <nav class="nav-links">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/case-studies" class="nav-link">Case Studies</a>
+                <a href="/about-us" class="nav-link">About Us</a>
+                <a href="/contact-us" class="nav-link">Contact Us</a>
+            </nav>
+        </header>
+
+        <div class="page-title">
+            <h1>Our Blog</h1>
+            <p>Stay updated with the latest insights in software development, technology trends, and digital innovation from our expert team.</p>
+        </div>
+
+        <div class="blog-grid" id="blog-posts">
+            <!-- Blog posts will be loaded here via Netlify CMS -->
+            <!-- Default posts shown until CMS posts are loaded -->
+            <article class="blog-card">
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-category">Software Development</span>
+                        <time datetime="2024-01-15">January 15, 2024</time>
+                    </div>
+                    <h3>The Future of Web Development: Trends to Watch in 2024</h3>
+                    <p class="blog-excerpt">Explore the cutting-edge technologies and frameworks that are shaping the future of web development, from AI integration to progressive web apps.</p>
+                    <a href="/blog/future-web-development-2024" class="read-more">Read More →</a>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-category">Mobile Apps</span>
+                        <time datetime="2024-01-10">January 10, 2024</time>
+                    </div>
+                    <h3>Cross-Platform vs Native App Development: Making the Right Choice</h3>
+                    <p class="blog-excerpt">Understanding the pros and cons of different mobile app development approaches to help you make informed decisions for your project.</p>
+                    <a href="/blog/cross-platform-vs-native-apps" class="read-more">Read More →</a>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-category">SEO</span>
+                        <time datetime="2024-01-05">January 5, 2024</time>
+                    </div>
+                    <h3>SEO Best Practices for Modern Websites in 2024</h3>
+                    <p class="blog-excerpt">Learn the latest SEO strategies and techniques to improve your website's visibility and ranking in search engines.</p>
+                    <a href="/blog/seo-best-practices-2024" class="read-more">Read More →</a>
+                </div>
+            </article>
+        </div>
+
+        <div class="cta-section">
+            <h2>Ready to Start Your Project?</h2>
+            <p>Let's discuss how we can help bring your ideas to life with our expert development services.</p>
+            <a href="/contact-us" class="cta-button">Get Started Today</a>
+        </div>
+    </div>
+
+    <!-- Netlify Identity Widget -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    
+    <!-- Blog Loader Script -->
+    <script>
+        // Blog Loader for Netlify CMS Integration
+        class BlogLoader {
+            constructor() {
+                this.blogContainer = document.getElementById('blog-posts');
+                this.loadBlogPosts();
+            }
+
+            async loadBlogPosts() {
+                try {
+                    // Try to load blog posts from Netlify CMS
+                    const response = await fetch('/.netlify/functions/get-blog-posts');
+                    if (response.ok) {
+                        const posts = await response.json();
+                        if (posts.length > 0) {
+                            this.renderBlogPosts(posts);
+                        }
+                    }
+                } catch (error) {
+                    console.log('CMS posts not available yet, showing static posts');
+                    // Keep the existing static posts
+                }
+            }
+
+            renderBlogPosts(posts) {
+                // Clear existing posts
+                this.blogContainer.innerHTML = '';
+
+                // Sort posts by date (newest first)
+                posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+                posts.forEach(post => {
+                    const blogCard = this.createBlogCard(post);
+                    this.blogContainer.appendChild(blogCard);
+                });
+            }
+
+            createBlogCard(post) {
+                const article = document.createElement('article');
+                article.className = 'blog-card';
+
+                const formattedDate = new Date(post.date).toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                });
+
+                // Create featured image HTML if image exists
+                const featuredImageHtml = post.featured_image ? 
+                    `<div class="blog-image">
+                        <img src="${post.featured_image}" alt="${post.title}" loading="lazy">
+                    </div>` : '';
+
+                article.innerHTML = `
+                    ${featuredImageHtml}
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category">${post.category}</span>
+                            <time datetime="${post.date}">${formattedDate}</time>
+                        </div>
+                        <h3>${post.title}</h3>
+                        <p class="blog-excerpt">${post.excerpt}</p>
+                        <a href="/blog/${post.slug}" class="read-more">Read More →</a>
+                    </div>
+                `;
+
+                return article;
+            }
+        }
+
+        // Initialize blog loader when DOM is ready
+        document.addEventListener('DOMContentLoaded', function() {
+            new BlogLoader();
+        });
+
+        // Netlify Identity Widget Integration
+        if (window.netlifyIdentity) {
+            window.netlifyIdentity.on("init", user => {
+                if (!user) {
+                    window.netlifyIdentity.on("login", () => {
+                        document.location.href = "/admin/";
+                    });
+                }
+            });
+        }
+    </script>
+</body>
+</html>
