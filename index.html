@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ROSH Software - Your trusted IT partner: Expert software and app development services. Create your website, generate leads through SEO, become a vendor, explore live projects, or read our blog for industry insights.">
+    <meta name="keywords" content="software development, app development, website creation, SEO leads, vendor opportunities, live projects, software blog, tech blog">
+    <meta name="google-site-verification" content="GYXPT_GzoVJwgKJ76Tklai6EbKPC3RiapkFUJabA2Ts" />
+    <title>ROSH-Software</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0a1128 0%, #0a1128 50%, #064760 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            color: white;
+        }
+
+        body::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(13, 170, 193, 0.3) 0%, rgba(13, 170, 193, 0) 70%);
+            z-index: 0;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            padding: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .top-nav {
+            position: absolute;
+            top: 0.5rem;
+            right: 3rem;
+            display: flex;
+            gap: 1rem;
+            z-index: 2;
+        }
+
+        .nav-btn {
+            padding: 0.4rem 0.6rem;
+            background-color: transparent;
+            color: white;
+            text-decoration: none;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            font-size: 0.55rem;
+            letter-spacing: 0.3px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            white-space: nowrap;
+            border-radius: 2px;
+        }
+
+        .nav-btn:hover {
+            border-color: rgba(255, 255, 255, 0.6);
+            background-color: rgba(255, 255, 255, 0.03);
+            transform: translateY(-1px);
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            max-width: 600px;
+            margin-top: 1rem;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .logo {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        h1 {
+            color: white;
+            font-size: 4rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 0.2rem;
+        }
+
+        h2 {
+            color: white;
+            font-size: 4rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+
+        .tagline {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1rem;
+            letter-spacing: 1px;
+            margin-bottom: 3rem;
+        }
+
+        .buttons-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            width: 100%;
+        }
+
+        .btn {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            background-color: transparent;
+            color: white;
+            text-decoration: none;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn:hover {
+            border-color: rgba(255, 255, 255, 0.8);
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .arrow {
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover .arrow {
+            transform: translateX(5px);
+        }
+
+        @media (max-width: 768px) {
+            .top-nav {
+                position: static;
+                justify-content: center;
+                margin-bottom: 1.5rem;
+                flex-wrap: wrap;
+                gap: 0.6rem;
+            }
+            
+            .nav-btn {
+                font-size: 0.5rem;
+                padding: 0.35rem 0.55rem;
+            }
+            
+            .buttons-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 3rem;
+            }
+            
+            h2 {
+                font-size: 3rem;
+            }
+            
+            .content {
+                margin-top: 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .top-nav {
+                grid-template-columns: 1fr 1fr;
+                display: grid;
+                gap: 0.5rem;
+            }
+            
+            .nav-btn {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="top-nav">
+            <a href="#" class="nav-btn" aria-label="Read ROSH Software's technology blog">READ OUR BLOG</a>
+            <a href="#" class="nav-btn" aria-label="Explore ROSH Software's case studies">CASE STUDIES</a>
+            <a href="#" class="nav-btn" aria-label="Learn about ROSH Software">ABOUT US</a>
+            <a href="#" class="nav-btn" aria-label="Contact ROSH Software">CONTACT US</a>
+        </nav>
+        
+        <div class="content">
+            <div class="logo-container">
+                <svg class="logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-label="ROSH Software Logo">
+                    <polygon points="50,0 100,50 50,100 0,50" fill="white"/>
+                </svg>
+                <h1>ROSH</h1>
+            </div>
+            <h2>SOFTWARE</h2>
+            <p class="tagline">SOFTWARE AND APP DEVELOPMENT</p>
+            
+            <div class="buttons-grid">
+                <a href="#" class="btn" aria-label="Create a professional website with ROSH Software">CREATE WEBSITE <span class="arrow">→</span></a>
+                <a href="#" class="btn" aria-label="Generate leads through SEO services with ROSH Software">GET LEADS THROUGH SEO <span class="arrow">→</span></a>
+                <a href="#" class="btn" aria-label="Become a vendor with ROSH Software">BECOME A VENDOR <span class="arrow">→</span></a>
+                <a href="#" class="btn" aria-label="Explore live projects at ROSH Software">LIVE PROJECTS <span class="arrow">→</span></a>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const buttons = document.querySelectorAll('.btn, .nav-btn');
+            
+            buttons.forEach(button => {
+                button.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-2px)';
+                });
+                
+                button.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
