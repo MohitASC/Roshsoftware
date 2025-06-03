@@ -1,22 +1,82 @@
 backend:
   name: git-gateway
-  branch: main # Change to "master" if that's your default branch
+  branch: main
 
-media_folder: "assets/images" # Where uploaded images will be stored
-public_folder: "/assets/images" # Public path to uploaded images
+# Media files will be stored in the repository under images/uploads
+media_folder: "images/uploads"
+# The src attribute for uploaded media will begin with /images/uploads
+public_folder: "/images/uploads"
+
+# Enable editorial workflow for draft/review/publish workflow
+publish_mode: editorial_workflow
 
 collections:
-  - name: "blog" # Used in routes, ie.: /admin/collections/blog
-    label: "Blog Posts" # Used in the UI
-    folder: "blog" # The path to the folder where blog posts are stored
-    create: true # Allow users to create new documents in this collection
-    slug: "{{slug}}" # Filename template: just the slug
-    fields: # The fields for each document, matching your blog structure
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Category", name: "category", widget: "select", options: ["Software Development", "Mobile Apps", "SEO", "Web Development", "Technology", "Digital Marketing"]}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Excerpt", name: "excerpt", widget: "text", hint: "Short description that appears on blog cards"}
-      - {label: "URL Slug", name: "slug", widget: "string", hint: "URL-friendly version (e.g., future-web-development-2024)"}
-      - {label: "Featured Image", name: "featured_image", widget: "image", required: false}
-      - {label: "Meta Description", name: "meta_description", widget: "text", required: false, hint: "SEO meta description"}
-      - {label: "Body", name: "body", widget: "markdown", buttons: ["bold", "italic", "code", "link", "heading-two", "heading-three", "quote", "bulleted-list", "numbered-list"]}
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    editor:
+      preview: false
+    fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "blog" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { 
+          label: "Category", 
+          name: "category", 
+          widget: "select", 
+          options: ["Software Development", "Mobile Apps", "SEO", "Web Development", "Technology", "Digital Marketing"]
+        }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { 
+          label: "Excerpt", 
+          name: "excerpt", 
+          widget: "text", 
+          hint: "Short description that appears on blog cards (max 160 characters for SEO)" 
+        }
+      - { 
+          label: "URL Slug", 
+          name: "slug", 
+          widget: "string", 
+          hint: "URL-friendly version (e.g., future-web-development-2024)" 
+        }
+      - { 
+          label: "Featured Image", 
+          name: "featured_image", 
+          widget: "image", 
+          required: false,
+          hint: "Recommended size: 800x400px"
+        }
+      - { 
+          label: "Meta Description", 
+          name: "meta_description", 
+          widget: "text", 
+          required: false, 
+          hint: "SEO meta description (max 160 characters)" 
+        }
+      - { 
+          label: "Tags", 
+          name: "tags", 
+          widget: "list", 
+          required: false,
+          hint: "Add relevant tags for better categorization"
+        }
+      - { 
+          label: "Author", 
+          name: "author", 
+          widget: "string", 
+          default: "ROSH Software Team" 
+        }
+      - { 
+          label: "Published", 
+          name: "published", 
+          widget: "boolean", 
+          default: true,
+          hint: "Uncheck to save as draft"
+        }
+      - { 
+          label: "Body", 
+          name: "body", 
+          widget: "markdown",
+          buttons: ["bold", "italic", "code", "link", "heading-two", "heading-three", "quote", "bulleted-list", "numbered-list", "code-block"]
+        }
